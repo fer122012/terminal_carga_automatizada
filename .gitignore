@@ -1,3 +1,29 @@
+# ── Binario compilado ──────────────────────────────────────────────────
+terminal
+ 
+# ── Archivos objeto e intermedios ──────────────────────────────────────
 *.o
-terminal_sim
-.vscode/
+*.a
+*.so
+ 
+# ── Logs generados en ejecución ────────────────────────────────────────
+logs/
+ 
+# ── Archivos de debug (core dumps) ─────────────────────────────────────
+core
+core.*
+vgcore.*
+ 
+# ── VS Code ────────────────────────────────────────────────────────────
+# Conserva .vscode/ para compartir la config del proyecto,
+# pero ignora configuraciones personales de cada desarrollador.
+.vscode/settings.json
+.vscode/extensions.json
+ 
+# ── WSL / Linux ────────────────────────────────────────────────────────
+*~
+.DS_Store
+ 
+# ── Valgrind / sanitizers ───────────────────────────────────────────────
+valgrind-out.txt
+*.memcheck
