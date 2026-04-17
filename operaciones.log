@@ -1,0 +1,70 @@
+[t=147.990] Camion-01 | Estado: NUEVO     -> LISTO
+[t=147.990] Camion-01 | Estado: LISTO     -> BLOQUEADO
+[t=147.990] Camion-01 | Estado: BLOQUEADO -> EJECUCION
+[t=147.990] Camion-00 | Estado: NUEVO     -> LISTO
+[t=147.990] Camion-01 | Ocupando muelle | tipo=Normal     | burst=2 seg
+[t=147.990] Camion-02 | Estado: NUEVO     -> LISTO
+[t=147.990] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t=147.990] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t=147.990] Camion-03 | Estado: NUEVO     -> LISTO
+[t=147.990] Camion-03 | Estado: LISTO     -> BLOQUEADO
+[t=147.990] Camion-03 | Estado: BLOQUEADO -> EJECUCION
+[t=147.990] Camion-05 | Estado: NUEVO     -> LISTO
+[t=147.991] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t=147.990] Camion-02 | Ocupando muelle | tipo=Normal     | burst=2 seg
+[t=147.990] Camion-03 | Ocupando muelle | tipo=Perecedera | burst=3 seg
+[t=147.990] Camion-00 | Estado: LISTO     -> BLOQUEADO
+[t=147.990] Camion-04 | Estado: NUEVO     -> LISTO
+[t=147.991] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t=149.991] Camion-02 | Estado: EJECUCION -> TERMINADO
+[t=149.991] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t=149.991] Camion-05 | Ocupando muelle | tipo=Normal     | burst=1 seg
+[t=149.991] Camion-01 | Estado: EJECUCION -> TERMINADO
+[t=149.991] Camion-00 | Estado: BLOQUEADO -> EJECUCION
+[t=149.991] Camion-00 | Ocupando muelle | tipo=Normal     | burst=4 seg
+[t=150.991] Camion-03 | Estado: EJECUCION -> TERMINADO
+[t=150.991] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t=150.991] Camion-04 | Ocupando muelle | tipo=Normal     | burst=1 seg
+[t=150.995] Camion-05 | Estado: EJECUCION -> TERMINADO
+[t=151.994] Camion-04 | Estado: EJECUCION -> TERMINADO
+[t=153.992] Camion-00 | Estado: EJECUCION -> TERMINADO
+[t=153.993] Camion-00 | Estado: NUEVO     -> LISTO
+[t=153.993] Camion-02 | Estado: NUEVO     -> LISTO
+[t=153.993] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t=153.993] Camion-00 | Estado: LISTO     -> BLOQUEADO
+[t=153.993] Camion-01 | Estado: NUEVO     -> LISTO
+[t=153.993] Camion-01 | Estado: LISTO     -> BLOQUEADO
+[t=153.993] Camion-01 | Estado: BLOQUEADO -> EJECUCION
+[t=153.993] Camion-01 | Ocupando muelle | quantum=2 seg | restante=2 seg
+[t=153.993] Camion-03 | Estado: NUEVO     -> LISTO
+[t=153.993] Camion-03 | Estado: LISTO     -> BLOQUEADO
+[t=153.993] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t=153.993] Camion-02 | Ocupando muelle | quantum=2 seg | restante=2 seg
+[t=153.993] Camion-00 | Estado: BLOQUEADO -> EJECUCION
+[t=153.993] Camion-00 | Ocupando muelle | quantum=2 seg | restante=4 seg
+[t=153.993] Camion-04 | Estado: NUEVO     -> LISTO
+[t=153.993] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t=153.993] Camion-05 | Estado: NUEVO     -> LISTO
+[t=153.993] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t=155.994] Camion-01 | Estado: EJECUCION -> TERMINADO
+[t=155.994] Camion-00 | Estado: EJECUCION -> LISTO
+[t=155.994] Camion-00 | Quantum agotado — regresando a cola
+[t=155.994] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t=155.995] Camion-04 | Ocupando muelle | quantum=1 seg | restante=1 seg
+[t=155.994] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t=155.995] Camion-05 | Ocupando muelle | quantum=1 seg | restante=1 seg
+[t=155.994] Camion-03 | Estado: BLOQUEADO -> EJECUCION
+[t=155.996] Camion-03 | Ocupando muelle | quantum=2 seg | restante=3 seg
+[t=155.994] Camion-02 | Estado: EJECUCION -> TERMINADO
+[t=156.997] Camion-00 | Estado: LISTO     -> BLOQUEADO
+[t=156.997] Camion-04 | Estado: EJECUCION -> TERMINADO
+[t=156.997] Camion-00 | Estado: BLOQUEADO -> EJECUCION
+[t=156.997] Camion-00 | Ocupando muelle | quantum=2 seg | restante=2 seg
+[t=156.998] Camion-05 | Estado: EJECUCION -> TERMINADO
+[t=157.996] Camion-03 | Estado: EJECUCION -> LISTO
+[t=157.996] Camion-03 | Quantum agotado — regresando a cola
+[t=158.998] Camion-00 | Estado: EJECUCION -> TERMINADO
+[t=159.015] Camion-03 | Estado: LISTO     -> BLOQUEADO
+[t=159.015] Camion-03 | Estado: BLOQUEADO -> EJECUCION
+[t=159.015] Camion-03 | Ocupando muelle | quantum=1 seg | restante=1 seg
+[t=160.042] Camion-03 | Estado: EJECUCION -> TERMINADO
