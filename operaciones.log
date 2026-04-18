@@ -68,3 +68,312 @@
 [t=159.015] Camion-03 | Estado: BLOQUEADO -> EJECUCION
 [t=159.015] Camion-03 | Ocupando muelle | quantum=1 seg | restante=1 seg
 [t=160.042] Camion-03 | Estado: EJECUCION -> TERMINADO
+[t=2604.340] Camion-00 | Estado: NUEVO     -> LISTO
+[t=2604.340] Camion-00 | Estado: LISTO     -> BLOQUEADO
+[t=2604.340] Camion-00 | Estado: BLOQUEADO -> EJECUCION
+[t=2604.340] Camion-00 | Ocupando muelle | tipo=Normal     | burst=1 seg
+[t=2604.340] Camion-02 | Estado: NUEVO     -> LISTO
+[t=2604.340] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t=2604.340] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t=2604.340] Camion-01 | Estado: NUEVO     -> LISTO
+[t=2604.340] Camion-01 | Estado: LISTO     -> BLOQUEADO
+[t=2604.340] Camion-01 | Estado: BLOQUEADO -> EJECUCION
+[t=2604.340] Camion-01 | Ocupando muelle | tipo=Normal     | burst=1 seg
+[t=2604.340] Camion-05 | Estado: NUEVO     -> LISTO
+[t=2604.340] Camion-04 | Estado: NUEVO     -> LISTO
+[t=2604.340] Camion-03 | Estado: NUEVO     -> LISTO
+[t=2604.341] Camion-03 | Estado: LISTO     -> BLOQUEADO
+[t=2604.340] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t=2604.341] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t=2604.340] Camion-02 | Ocupando muelle | tipo=Normal     | burst=3 seg
+[t=2605.344] Camion-01 | Estado: EJECUCION -> TERMINADO
+[t=2605.344] Camion-03 | Estado: BLOQUEADO -> EJECUCION
+[t=2605.344] Camion-03 | Ocupando muelle | tipo=Normal     | burst=4 seg
+[t=2605.345] Camion-00 | Estado: EJECUCION -> TERMINADO
+[t=2605.345] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t=2605.345] Camion-05 | Ocupando muelle | tipo=Normal     | burst=1 seg
+[t=2606.360] Camion-05 | Estado: EJECUCION -> TERMINADO
+[t=2606.360] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t=2606.360] Camion-04 | Ocupando muelle | tipo=Normal     | burst=3 seg
+[t=2607.348] Camion-02 | Estado: EJECUCION -> TERMINADO
+[t=2609.380] Camion-04 | Estado: EJECUCION -> TERMINADO
+[t=2609.446] Camion-03 | Estado: EJECUCION -> TERMINADO
+[t=2609.448] Camion-00 | Estado: NUEVO     -> LISTO
+[t=2609.449] Camion-00 | Estado: LISTO     -> BLOQUEADO
+[t=2609.449] Camion-00 | Estado: BLOQUEADO -> EJECUCION
+[t=2609.449] Camion-00 | Ocupando muelle | quantum=1 seg | restante=1 seg
+[t=2609.449] Camion-02 | Estado: NUEVO     -> LISTO
+[t=2609.449] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t=2609.449] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t=2609.450] Camion-02 | Ocupando muelle | quantum=2 seg | restante=3 seg
+[t=2609.449] Camion-04 | Estado: NUEVO     -> LISTO
+[t=2609.450] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t=2609.450] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t=2609.450] Camion-04 | Ocupando muelle | quantum=2 seg | restante=3 seg
+[t=2609.449] Camion-05 | Estado: NUEVO     -> LISTO
+[t=2609.450] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t=2609.448] Camion-01 | Estado: NUEVO     -> LISTO
+[t=2609.450] Camion-01 | Estado: LISTO     -> BLOQUEADO
+[t=2609.449] Camion-03 | Estado: NUEVO     -> LISTO
+[t=2609.450] Camion-03 | Estado: LISTO     -> BLOQUEADO
+[t=2610.488] Camion-00 | Estado: EJECUCION -> TERMINADO
+[t=2610.489] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t=2610.489] Camion-05 | Ocupando muelle | quantum=1 seg | restante=1 seg
+[t=2611.451] Camion-04 | Estado: EJECUCION -> LISTO
+[t=2611.451] Camion-04 | Quantum agotado — regresando a cola
+[t=2611.451] Camion-01 | Estado: BLOQUEADO -> EJECUCION
+[t=2611.451] Camion-01 | Ocupando muelle | quantum=1 seg | restante=1 seg
+[t=2611.451] Camion-02 | Estado: EJECUCION -> LISTO
+[t=2611.452] Camion-02 | Quantum agotado — regresando a cola
+[t=2611.451] Camion-03 | Estado: BLOQUEADO -> EJECUCION
+[t=2611.452] Camion-03 | Ocupando muelle | quantum=2 seg | restante=4 seg
+[t=2611.490] Camion-05 | Estado: EJECUCION -> TERMINADO
+[t=2612.451] Camion-01 | Estado: EJECUCION -> TERMINADO
+[t=2612.458] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t=2612.458] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t=2612.458] Camion-04 | Ocupando muelle | quantum=1 seg | restante=1 seg
+[t=2612.462] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t=2612.462] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t=2612.462] Camion-02 | Ocupando muelle | quantum=1 seg | restante=1 seg
+[t=2613.455] Camion-03 | Estado: EJECUCION -> LISTO
+[t=2613.455] Camion-03 | Quantum agotado — regresando a cola
+[t=2613.459] Camion-04 | Estado: EJECUCION -> TERMINADO
+[t=2613.463] Camion-02 | Estado: EJECUCION -> TERMINADO
+[t=2614.456] Camion-03 | Estado: LISTO     -> BLOQUEADO
+[t=2614.456] Camion-03 | Estado: BLOQUEADO -> EJECUCION
+[t=2614.456] Camion-03 | Ocupando muelle | quantum=2 seg | restante=2 seg
+[t=2616.461] Camion-03 | Estado: EJECUCION -> TERMINADO
+[t= 0.000] Camion-00 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-04 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t= 0.000] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t= 0.000] Camion-04 | Ocupando muelle | tipo=Normal     | usando=5 seg | restante=5 seg
+[t= 0.000] Camion-01 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-01 | Estado: LISTO     -> BLOQUEADO
+[t= 0.000] Camion-01 | Estado: BLOQUEADO -> EJECUCION
+[t= 0.000] Camion-01 | Ocupando muelle | tipo=Normal     | usando=1 seg | restante=1 seg
+[t= 0.000] Camion-00 | Estado: LISTO     -> BLOQUEADO
+[t= 0.001] Camion-00 | Estado: BLOQUEADO -> EJECUCION
+[t= 0.001] Camion-00 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=2 seg
+[t= 0.000] Camion-03 | Estado: NUEVO     -> LISTO
+[t= 0.001] Camion-03 | Estado: LISTO     -> BLOQUEADO
+[t= 0.000] Camion-02 | Estado: NUEVO     -> LISTO
+[t= 0.001] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t= 0.000] Camion-05 | Estado: NUEVO     -> LISTO
+[t= 0.001] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t= 1.001] Camion-01 | Estado: EJECUCION -> TERMINADO
+[t= 1.001] Camion-03 | Estado: BLOQUEADO -> EJECUCION
+[t= 1.001] Camion-03 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=2 seg
+[t= 2.001] Camion-00 | Estado: EJECUCION -> TERMINADO
+[t= 2.001] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t= 2.001] Camion-02 | Ocupando muelle | tipo=Normal     | usando=3 seg | restante=3 seg
+[t= 3.002] Camion-03 | Estado: EJECUCION -> TERMINADO
+[t= 3.002] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t= 3.003] Camion-05 | Ocupando muelle | tipo=Perecedera | usando=5 seg | restante=5 seg
+[t= 5.001] Camion-04 | Estado: EJECUCION -> TERMINADO
+[t= 5.002] Camion-02 | Estado: EJECUCION -> TERMINADO
+[t= 8.003] Camion-05 | Estado: EJECUCION -> TERMINADO
+[t= 0.001] Camion-00 | Estado: NUEVO     -> LISTO
+[t= 0.001] Camion-00 | Estado: LISTO     -> BLOQUEADO
+[t= 0.001] Camion-00 | Estado: BLOQUEADO -> EJECUCION
+[t= 0.001] Camion-00 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=2 seg
+[t= 0.001] Camion-01 | Estado: NUEVO     -> LISTO
+[t= 0.002] Camion-05 | Estado: NUEVO     -> LISTO
+[t= 0.002] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t= 0.002] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t= 0.002] Camion-05 | Ocupando muelle | tipo=Perecedera | usando=2 seg | restante=5 seg
+[t= 0.002] Camion-01 | Estado: LISTO     -> BLOQUEADO
+[t= 0.002] Camion-01 | Estado: BLOQUEADO -> EJECUCION
+[t= 0.002] Camion-01 | Ocupando muelle | tipo=Normal     | usando=1 seg | restante=1 seg
+[t= 0.001] Camion-04 | Estado: NUEVO     -> LISTO
+[t= 0.002] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t= 0.001] Camion-02 | Estado: NUEVO     -> LISTO
+[t= 0.002] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t= 0.001] Camion-03 | Estado: NUEVO     -> LISTO
+[t= 0.002] Camion-03 | Estado: LISTO     -> BLOQUEADO
+[t= 1.002] Camion-01 | Estado: EJECUCION -> TERMINADO
+[t= 1.002] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t= 1.002] Camion-04 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=5 seg
+[t= 2.002] Camion-00 | Estado: EJECUCION -> TERMINADO
+[t= 2.002] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t= 2.002] Camion-02 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=3 seg
+[t= 2.002] Camion-05 | Quantum agotado — regresando a cola de listos
+[t= 2.002] Camion-05 | Estado: EJECUCION -> LISTO
+[t= 2.002] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t= 2.002] Camion-03 | Estado: BLOQUEADO -> EJECUCION
+[t= 2.003] Camion-03 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=2 seg
+[t= 3.002] Camion-04 | Quantum agotado — regresando a cola de listos
+[t= 3.002] Camion-04 | Estado: EJECUCION -> LISTO
+[t= 3.002] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t= 3.002] Camion-05 | Ocupando muelle | tipo=Perecedera | usando=2 seg | restante=3 seg
+[t= 3.003] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t= 4.002] Camion-02 | Quantum agotado — regresando a cola de listos
+[t= 4.002] Camion-02 | Estado: EJECUCION -> LISTO
+[t= 4.002] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t= 4.002] Camion-04 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=3 seg
+[t= 4.002] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t= 4.003] Camion-03 | Estado: EJECUCION -> TERMINADO
+[t= 4.003] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t= 4.003] Camion-02 | Ocupando muelle | tipo=Normal     | usando=1 seg | restante=1 seg
+[t= 5.003] Camion-05 | Quantum agotado — regresando a cola de listos
+[t= 5.003] Camion-05 | Estado: EJECUCION -> LISTO
+[t= 5.003] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t= 5.003] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t= 5.003] Camion-05 | Ocupando muelle | tipo=Perecedera | usando=1 seg | restante=1 seg
+[t= 5.003] Camion-02 | Estado: EJECUCION -> TERMINADO
+[t= 6.003] Camion-04 | Quantum agotado — regresando a cola de listos
+[t= 6.003] Camion-04 | Estado: EJECUCION -> LISTO
+[t= 6.003] Camion-05 | Estado: EJECUCION -> TERMINADO
+[t= 6.003] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t= 6.003] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t= 6.003] Camion-04 | Ocupando muelle | tipo=Normal     | usando=1 seg | restante=1 seg
+[t= 7.003] Camion-04 | Estado: EJECUCION -> TERMINADO
+[t= 0.000] Camion-00 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-02 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-01 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-00 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-00 | Ocupando muelle | tipo=Perecedera | usando=1 seg | restante=1 seg
+[t= 0.000] Camion-02 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-02 | Ocupando muelle | tipo=Normal     | usando=5 seg | restante=5 seg
+[t= 0.001] Camion-05 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-03 | Estado: NUEVO     -> LISTO
+[t= 0.001] Camion-01 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-01 | Ocupando muelle | tipo=Perecedera | usando=3 seg | restante=3 seg
+[t= 0.001] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t= 0.000] Camion-04 | Estado: NUEVO     -> LISTO
+[t= 1.081] Camion-00 | Estado: EJECUCION -> TERMINADO
+[t= 1.081] Camion-03 | Estado: LISTO     -> BLOQUEADO
+[t= 1.081] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t= 1.081] Camion-05 | Ocupando muelle | tipo=Perecedera | usando=4 seg | restante=4 seg
+[t= 3.034] Camion-01 | Estado: EJECUCION -> TERMINADO
+[t= 3.035] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t= 3.035] Camion-03 | Estado: BLOQUEADO -> EJECUCION
+[t= 3.035] Camion-03 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=2 seg
+[t= 5.027] Camion-02 | Estado: EJECUCION -> TERMINADO
+[t= 5.027] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t= 5.028] Camion-04 | Ocupando muelle | tipo=Normal     | usando=3 seg | restante=3 seg
+[t= 5.036] Camion-03 | Estado: EJECUCION -> TERMINADO
+[t= 5.085] Camion-05 | Estado: EJECUCION -> TERMINADO
+[t= 8.061] Camion-04 | Estado: EJECUCION -> TERMINADO
+[t= 0.000] Camion-00 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-01 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-00 | Estado: LISTO     -> EJECUCION
+[t= 0.000] Camion-00 | Ocupando muelle | tipo=Perecedera | usando=1 seg | restante=1 seg
+[t= 0.000] Camion-03 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-04 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-02 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-05 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-01 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-01 | Ocupando muelle | tipo=Perecedera | usando=2 seg | restante=3 seg
+[t= 0.001] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t= 0.001] Camion-03 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-03 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=2 seg
+[t= 1.013] Camion-00 | Estado: EJECUCION -> TERMINADO
+[t= 1.013] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t= 1.013] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t= 1.013] Camion-04 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=3 seg
+[t= 2.007] Camion-01 | Quantum agotado — regresando a cola de listos
+[t= 2.008] Camion-01 | Estado: EJECUCION -> LISTO
+[t= 2.008] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t= 2.008] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t= 2.008] Camion-05 | Ocupando muelle | tipo=Perecedera | usando=2 seg | restante=4 seg
+[t= 2.050] Camion-03 | Estado: EJECUCION -> TERMINADO
+[t= 2.051] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t= 2.051] Camion-02 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=5 seg
+[t= 2.051] Camion-01 | Estado: LISTO     -> BLOQUEADO
+[t= 3.014] Camion-04 | Quantum agotado — regresando a cola de listos
+[t= 3.014] Camion-04 | Estado: EJECUCION -> LISTO
+[t= 3.015] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t= 3.015] Camion-01 | Estado: BLOQUEADO -> EJECUCION
+[t= 3.015] Camion-01 | Ocupando muelle | tipo=Perecedera | usando=1 seg | restante=1 seg
+[t= 4.012] Camion-05 | Quantum agotado — regresando a cola de listos
+[t= 4.012] Camion-05 | Estado: EJECUCION -> LISTO
+[t= 4.012] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t= 4.013] Camion-04 | Ocupando muelle | tipo=Normal     | usando=1 seg | restante=1 seg
+[t= 4.013] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t= 4.026] Camion-01 | Estado: EJECUCION -> TERMINADO
+[t= 4.026] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t= 4.026] Camion-05 | Ocupando muelle | tipo=Perecedera | usando=2 seg | restante=2 seg
+[t= 4.052] Camion-02 | Quantum agotado — regresando a cola de listos
+[t= 4.052] Camion-02 | Estado: EJECUCION -> LISTO
+[t= 4.052] Camion-02 | Estado: LISTO     -> EJECUCION
+[t= 4.053] Camion-02 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=3 seg
+[t= 5.031] Camion-04 | Estado: EJECUCION -> TERMINADO
+[t= 6.027] Camion-05 | Estado: EJECUCION -> TERMINADO
+[t= 6.060] Camion-02 | Quantum agotado — regresando a cola de listos
+[t= 6.060] Camion-02 | Estado: EJECUCION -> LISTO
+[t= 6.061] Camion-02 | Estado: LISTO     -> EJECUCION
+[t= 6.061] Camion-02 | Ocupando muelle | tipo=Normal     | usando=1 seg | restante=1 seg
+[t= 7.066] Camion-02 | Estado: EJECUCION -> TERMINADO
+[t= 0.000] Camion-00 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-01 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-04 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-05 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-03 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-02 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-00 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-00 | Ocupando muelle | tipo=Normal     | usando=5 seg | restante=5 seg
+[t= 0.000] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t= 0.000] Camion-04 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-04 | Ocupando muelle | tipo=Perecedera | usando=2 seg | restante=2 seg
+[t= 0.000] Camion-03 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-03 | Ocupando muelle | tipo=Perecedera | usando=2 seg | restante=2 seg
+[t= 2.009] Camion-03 | Estado: EJECUCION -> TERMINADO
+[t= 2.009] Camion-01 | Estado: LISTO     -> BLOQUEADO
+[t= 2.009] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t= 2.009] Camion-05 | Ocupando muelle | tipo=Normal     | usando=3 seg | restante=3 seg
+[t= 2.078] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t= 2.078] Camion-04 | Estado: EJECUCION -> TERMINADO
+[t= 2.078] Camion-01 | Estado: BLOQUEADO -> EJECUCION
+[t= 2.079] Camion-01 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=2 seg
+[t= 4.101] Camion-01 | Estado: EJECUCION -> TERMINADO
+[t= 4.101] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t= 4.101] Camion-02 | Ocupando muelle | tipo=Normal     | usando=4 seg | restante=4 seg
+[t= 5.034] Camion-00 | Estado: EJECUCION -> TERMINADO
+[t= 5.052] Camion-05 | Estado: EJECUCION -> TERMINADO
+[t= 8.131] Camion-02 | Estado: EJECUCION -> TERMINADO
+[t= 0.000] Camion-00 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-03 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-02 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-04 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-01 | Estado: NUEVO     -> LISTO
+[t= 0.000] Camion-05 | Estado: NUEVO     -> LISTO
+[t= 0.001] Camion-04 | Estado: LISTO     -> BLOQUEADO
+[t= 0.000] Camion-00 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-00 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=5 seg
+[t= 0.000] Camion-03 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-03 | Ocupando muelle | tipo=Perecedera | usando=2 seg | restante=2 seg
+[t= 0.001] Camion-02 | Estado: LISTO     -> EJECUCION
+[t= 0.001] Camion-02 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=4 seg
+[t= 2.004] Camion-03 | Estado: EJECUCION -> TERMINADO
+[t= 2.005] Camion-01 | Estado: LISTO     -> BLOQUEADO
+[t= 2.005] Camion-04 | Estado: BLOQUEADO -> EJECUCION
+[t= 2.005] Camion-04 | Ocupando muelle | tipo=Perecedera | usando=2 seg | restante=2 seg
+[t= 2.019] Camion-02 | Quantum agotado — regresando a cola de listos
+[t= 2.020] Camion-01 | Estado: BLOQUEADO -> EJECUCION
+[t= 2.020] Camion-05 | Estado: LISTO     -> BLOQUEADO
+[t= 2.020] Camion-02 | Estado: EJECUCION -> LISTO
+[t= 2.020] Camion-01 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=2 seg
+[t= 2.026] Camion-00 | Quantum agotado — regresando a cola de listos
+[t= 2.026] Camion-00 | Estado: EJECUCION -> LISTO
+[t= 2.026] Camion-02 | Estado: LISTO     -> BLOQUEADO
+[t= 2.026] Camion-05 | Estado: BLOQUEADO -> EJECUCION
+[t= 2.026] Camion-05 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=3 seg
+[t= 4.006] Camion-04 | Estado: EJECUCION -> TERMINADO
+[t= 4.007] Camion-00 | Estado: LISTO     -> BLOQUEADO
+[t= 4.007] Camion-02 | Estado: BLOQUEADO -> EJECUCION
+[t= 4.007] Camion-02 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=2 seg
+[t= 4.021] Camion-01 | Estado: EJECUCION -> TERMINADO
+[t= 4.022] Camion-00 | Estado: BLOQUEADO -> EJECUCION
+[t= 4.022] Camion-00 | Ocupando muelle | tipo=Normal     | usando=2 seg | restante=3 seg
+[t= 4.083] Camion-05 | Quantum agotado — regresando a cola de listos
+[t= 4.083] Camion-05 | Estado: EJECUCION -> LISTO
+[t= 4.083] Camion-05 | Estado: LISTO     -> EJECUCION
+[t= 4.084] Camion-05 | Ocupando muelle | tipo=Normal     | usando=1 seg | restante=1 seg
+[t= 5.167] Camion-05 | Estado: EJECUCION -> TERMINADO
+[t= 6.013] Camion-02 | Estado: EJECUCION -> TERMINADO
+[t= 6.029] Camion-00 | Quantum agotado — regresando a cola de listos
+[t= 6.029] Camion-00 | Estado: EJECUCION -> LISTO
+[t= 6.030] Camion-00 | Estado: LISTO     -> EJECUCION
+[t= 6.030] Camion-00 | Ocupando muelle | tipo=Normal     | usando=1 seg | restante=1 seg
+[t= 7.030] Camion-00 | Estado: EJECUCION -> TERMINADO
