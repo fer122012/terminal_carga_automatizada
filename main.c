@@ -1,67 +1,3 @@
-/*
- * =========================================================================
- * SISTEMA DE GESTIÓN DE UNA TERMINAL DE CARGA AUTOMATIZADA
- * =========================================================================
- * Compilar : gcc -Wall -Wextra -o terminal main.c -lpthread
- * Uso      : ./terminal
- * =========================================================================
- *
- * ARQUITECTURA DE PLANIFICACIÓN
- * ──────────────────────────────
- * Un hilo planificador dedicado es el ÚNICO árbitro de acceso al muelle.
- * Cada camión se encola y espera en su propia variable de condición
- * (cond_listo[id]).  El planificador desencola al siguiente camión, llama
- * sem_wait() para reservar el muelle, y solo entonces hace cond_signal al
- * camión elegido.  El camión despertado entra directo a la sección crítica
- * sin ningún sem_wait() propio: el orden lo gobierna la cola, no el SO.
- *
- * POR QUÉ EL PLANIFICADOR LLAMA sem_wait() Y NO EL CAMIÓN
- * ─────────────────────────────────────────────────────────
- * Si cada camión llamara sem_wait() por sí mismo, el SO decidiría qué
- * hilo obtiene el semáforo primero, rompiendo el orden FIFO/prioridad.
- * Al centralizar sem_wait() en el planificador (que ya tiene el lock de
- * mutex_plan), la reserva del muelle y el despertar del camión son
- * atómicos: no hay ventana para que otro hilo se cuele.
- *
- * ESTADOS DEL HILO
- * ─────────────────
- *   NUEVO      → hilo creado, burst y prioridad asignados.
- *   LISTO      → en cola de planificación, esperando cond_listo.
- *   BLOQUEADO  → planificador lo eligió pero sem_muelles aún en 0;
- *                el planificador espera en sem_wait (camión también
- *                queda bloqueado en cond_listo durante ese tiempo).
- *                También se usa cuando el camión espera mutex_log.
- *   EJECUCION  → muelle obtenido, dentro de la sección crítica.
- *   TERMINADO  → burst agotado, sem_post libera el muelle.
- *
- * COLA CON PRIORIDAD ESTABLE
- * ───────────────────────────
- *   Invariante: [ perecederos FIFO | normales FIFO ]
- *   Un perecedero nuevo se inserta al final del bloque de perecederos
- *   (antes del primer normal), preservando el orden de llegada entre
- *   perecederos y entre normales por separado.
- *
- * PREVENCIÓN DE DEADLOCK
- * ───────────────────────
- *   Orden fijo de adquisición de locks:
- *     mutex_plan → mutex_estado → mutex_log
- *   Rompe la condición de espera circular (Coffman).
- *   sem_muelles se usa solo dentro de mutex_plan (planificador),
- *   sem_post se llama fuera de cualquier mutex para evitar inversión.
- *
- * SINCRONIZACIÓN
- * ───────────────
- *   sem_muelles     : semáforo POSIX, init=NUM_MUELLES.  El planificador
- *                     hace sem_wait antes de despertar al camión elegido;
- *                     el camión hace sem_post al terminar su turno.
- *   mutex_log       : protege escritura concurrente en el log global.
- *   mutex_estado    : protege cambios de estado de cada camión.
- *   mutex_plan      : mutex maestro del planificador.
- *   cond_cola       : planificador espera camiones en cola.
- *   cond_listo[id]  : señal individual; solo el camión elegido es despertado.
- * =========================================================================
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -78,7 +14,7 @@
 #define QUANTUM_RR 2
 #define LOG_FILE "operaciones.log"
 
-/* ═══════════════════════════ ENUMERACIONES ══════════════════════════ */
+/* ═══════════════════════════ ENUMERACIONES ═════════════════════════ */
 
 typedef enum
 {
@@ -133,10 +69,6 @@ typedef struct
 
     /*
      * sem_muelles: semáforo POSIX inicializado en NUM_MUELLES.
-     * El planificador llama sem_wait() para reservar el muelle antes de
-     * despertar al camión elegido.  El camión llama sem_post() al terminar.
-     * Así el semáforo controla la capacidad del recurso y el planificador
-     * controla el orden, sin que ningún hilo camión compita en sem_wait.
      */
     sem_t sem_muelles;
 
@@ -190,10 +122,8 @@ static const char *estado_str(EstadoHilo e)
 /* ═════════════════════════ LOG (sección crítica) ════════════════════ */
 
 /*
- * log_escribir — escritura thread-safe al log y consola.
- *
  * SECCIÓN CRÍTICA: mutex_log evita que dos hilos intercalen sus
- * escrituras en el archivo y corrompan las líneas (race condition).
+ * escrituras en el archivo y corrompan las líneas (condición de carrera)
  */
 static void log_escribir(Ctx *ctx, int id, const char *evento)
 {
@@ -216,15 +146,6 @@ static void log_escribir(Ctx *ctx, int id, const char *evento)
 
 /* ═══════════════════ COLA CON PRIORIDAD ESTABLE ════════════════════ */
 
-/*
- * Llamar siempre con mutex_plan tomado.
- *
- * Invariante: [ perecederos en orden de llegada | normales en orden de llegada ]
- *
- * Un perecedero nuevo se inserta justo después del último perecedero
- * existente, desplazando los normales un lugar hacia adelante.
- * Un normal siempre va al final.
- */
 static void cola_encolar(Ctx *ctx, int id)
 {
     Cola *c = &ctx->cola;
@@ -235,19 +156,16 @@ static void cola_encolar(Ctx *ctx, int id)
 
     if (tipo == CARGA_NORMAL || c->tamanio == 0)
     {
-        /* Normal o cola vacía: al final */
         c->ids[c->fin] = id;
         c->fin = (c->fin + 1) % MAX_CAMIONES;
     }
     else
     {
         /*
-         * Perecedero: contar cuántos perecederos consecutivos hay ya
-         * desde el frente, luego insertar en esa posición desplazando
-         * los normales hacia atrás para hacer hueco.
+         * Perecedero
          */
         int n = c->tamanio;
-        int pos = 0; /* posición de inserción relativa al frente */
+        int pos = 0; 
         for (int i = 0; i < n; i++)
         {
             int idx = (c->frente + i) % MAX_CAMIONES;
@@ -256,7 +174,7 @@ static void cola_encolar(Ctx *ctx, int id)
             else
                 break;
         }
-        /* Desplazar desde el fin hacia la posición de inserción */
+        
         for (int i = n; i > pos; i--)
         {
             int dst = (c->frente + i) % MAX_CAMIONES;
@@ -269,7 +187,6 @@ static void cola_encolar(Ctx *ctx, int id)
     c->tamanio++;
 }
 
-/* Llamar siempre con mutex_plan tomado. Retorna -1 si vacía. */
 static int cola_desencolar(Ctx *ctx)
 {
     Cola *c = &ctx->cola;
@@ -301,18 +218,7 @@ static void cambiar_estado(Ctx *ctx, int id, EstadoHilo nuevo)
 
 /* ═══════════════════════ HILO PLANIFICADOR ══════════════════════════ */
 
-/*
- * hilo_planificador — árbitro único de acceso al muelle.
- *
- * Por cada turno:
- *   1. Espera (cond_cola) hasta que haya un camión en cola.
- *   2. Desencola al siguiente (respetando prioridad FIFO estable).
- *   3. Llama sem_wait(&sem_muelles) para reservar un muelle.
- *      Si todos están ocupados, el planificador se bloquea aquí
- *      (el camión elegido también queda en cond_listo esperando).
- *   4. Con muelle reservado, hace cond_signal al camión elegido.
- *      El camión entra directo a sección crítica sin sem_wait propio.
- */
+
 static void *hilo_planificador(void *arg)
 {
     Ctx *ctx = (Ctx *)arg;
@@ -336,13 +242,6 @@ static void *hilo_planificador(void *arg)
         if (id < 0)
             continue;
 
-        /*
-         * Reserva el muelle ANTES de despertar al camión.
-         * sem_wait puede bloquear si todos los muelles están ocupados;
-         * durante ese tiempo el camión elegido queda en cond_listo.
-         * Soltamos mutex_plan para no bloquear a otros hilos que
-         * quieran encolarse mientras esperamos el semáforo.
-         */
         pthread_mutex_unlock(&ctx->mutex_plan);
 
         /* Marca BLOQUEADO al camión si el semáforo va a bloquear */
@@ -351,11 +250,11 @@ static void *hilo_planificador(void *arg)
         if (val == 0)
             cambiar_estado(ctx, id, ESTADO_BLOQUEADO);
 
-        sem_wait(&ctx->sem_muelles); /* ← reserva muelle (sem_t POSIX) */
+        sem_wait(&ctx->sem_muelles); /* reserva muelle  */
 
         pthread_mutex_lock(&ctx->mutex_plan);
 
-        /* Despierta al camión elegido: muelle ya reservado */
+        /* Despierta al camión elegido */
         ctx->turno[id] = 1;
         pthread_cond_signal(&ctx->cond_listo[id]);
     }
@@ -378,22 +277,17 @@ static void *hilo_camion(void *arg)
     cambiar_estado(ctx, id, ESTADO_NUEVO);
     c->t_llegada = tiempo_actual() - ctx->t_base;
 
-    /* 2. LISTO: cambia estado ANTES de encolarse (refleja el momento real) */
+    /* 2. LISTO: cambia estado ANTES de encolarse */
     cambiar_estado(ctx, id, ESTADO_LISTO);
     pthread_mutex_lock(&ctx->mutex_plan);
     cola_encolar(ctx, id);
     pthread_cond_signal(&ctx->cond_cola);
     pthread_mutex_unlock(&ctx->mutex_plan);
 
-    /* Ciclo principal: una iteración por turno en el muelle */
+    /* Ciclo principal */
     while (c->burst_restante > 0)
     {
 
-        /*
-         * Espera la señal del planificador.
-         * Cuando llegue, el muelle ya está reservado (sem_wait lo hizo
-         * el planificador). El camión entra directo a EJECUCION.
-         */
         pthread_mutex_lock(&ctx->mutex_plan);
         while (!ctx->turno[id])
             pthread_cond_wait(&ctx->cond_listo[id], &ctx->mutex_plan);
@@ -422,7 +316,7 @@ static void *hilo_camion(void *arg)
 
         c->burst_restante -= uso;
 
-        /* Libera el muelle mediante sem_post (semáforo POSIX) */
+        /* Libera el muelle mediante sem_post  */
         sem_post(&ctx->sem_muelles);
 
         /* Round Robin: si no terminó, re-encola y vuelve a LISTO */
@@ -491,7 +385,6 @@ static void ctx_init(Ctx *ctx, AlgoritmoPlan alg,
         exit(EXIT_FAILURE);
     }
 
-    /* Misma seed en ambas rondas → mismos bursts para comparación justa */
     srand(seed);
     for (int i = 0; i < num_camiones; i++)
     {
@@ -569,8 +462,8 @@ static void ctx_destroy(Ctx *ctx)
 static void imprimir_tabla(Ctx *fifo, Ctx *rr)
 {
     printf("\n");
-    printf("╔═══════════════════════════════════════════════════════════════════════════════╗\n");
-    printf("║            TABLA COMPARATIVA — FIFO vs ROUND ROBIN                           ║\n");
+    printf("╔═════════════════════════════════════════════════════════════════════════════╗\n");
+    printf("║            TABLA COMPARATIVA — FIFO vs ROUND ROBIN                          ║\n");
     printf("╠═══════════╦══════════════╦══════════╦═════════════╦═════════════╦═══════════╣\n");
     printf("║ Algoritmo ║   Camion     ║  Burst   ║  T.Espera   ║ T.Retorno   ║  Estado   ║\n");
     printf("╠═══════════╬══════════════╬══════════╬═════════════╬═════════════╬═══════════╣\n");
